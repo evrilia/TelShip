@@ -1,11 +1,9 @@
 @php
-    // Ambil notifikasi terbaru dari tabel notifikasis milik user yang sedang login
     $userNotifs = \App\Models\Notifikasi::where('user_id', Auth::id())
         ->latest()
-        ->take(5) // Ambil 5 riwayat terbaru
+        ->take(5)
         ->get();
 
-    // Hitung hanya yang belum dibaca untuk memunculkan angka di lonceng
     $unreadCount = \App\Models\Notifikasi::where('user_id', Auth::id())
         ->where('is_read', false)
         ->count();
@@ -24,7 +22,6 @@
                     style="padding: 0;">
                     <i class="fas fa-bell text-warning fs-5"></i>
 
-                    {{-- Angka Badge sekarang dinamis berdasarkan jumlah yang belum dibaca --}}
                     @if($unreadCount > 0)
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                             style="font-size: 8px; padding: 3px 5px;">{{ $unreadCount }}</span>
@@ -39,7 +36,6 @@
                     <div style="max-height: 350px; overflow-y: auto;">
                         @forelse($userNotifs as $notif)
                             <li>
-                                {{-- Link ke route markAsRead agar status notif berubah jadi 'dibaca' saat diklik --}}
                                 <a class="dropdown-item py-3 d-flex align-items-start border-bottom {{ $notif->is_read ? 'opacity-75' : 'bg-light' }}"
                                     href="{{ route('notif.read', $notif->id) }}">
 

@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <style>
-        /* Kunci tata letak agar sidebar stay dan konten bergeser */
         .app-container {
             display: flex;
             width: 100%;
@@ -18,7 +17,6 @@
         .main-wrapper {
             flex: 1;
             margin-left: 260px;
-            /* Jarak tetap untuk sidebar fixed */
             min-height: 100vh;
             display: flex;
             flex-direction: column;

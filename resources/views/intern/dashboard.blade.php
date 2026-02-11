@@ -3,7 +3,6 @@
 @section('title', 'TelShip - Dashboard')
 
 @section('content')
-    {{-- Banner Section --}}
     <section class="banner mb-4">
         <div class="banner-text">
             <h1>Selamat Datang !</h1>
@@ -17,7 +16,6 @@
         <img src="{{ asset('images/bg.dash.png') }}" class="banner-img">
     </section>
 
-    {{-- Status Card Section --}}
     <section class="status-card mb-4">
         <div class="status-header">
             <div>
@@ -55,7 +53,6 @@
         </div>
     </section>
 
-    {{-- Process Card Section --}}
     <section class="process-card mb-4">
         <h2 class="process-title">Pendaftaran Magang</h2>
         <div class="process-steps">
@@ -80,7 +77,6 @@
         </div>
     </section>
 
-    {{-- University Card Section --}}
     <section class="univ-card mb-4">
         <h2 class="univ-title">Perguruan Tinggi yang telah bergabung</h2>
         <div class="univ-stats">

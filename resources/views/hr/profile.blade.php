@@ -60,10 +60,8 @@
 @endpush
 
 @section('content')
-    {{-- 1. TOPBAR (Harus diletakkan di sini agar sejajar dengan sidebar di layout admin) --}}
     @include('partials.topbar')
 
-    {{-- 2. WRAPPER UTAMA (Sesuai Dashboard) --}}
     <div class="container-fluid p-4">
         <div class="main-content-wrapper">
 
@@ -72,7 +70,6 @@
                 <p class="text-muted small">Kelola informasi data diri dan keamanan akun.</p>
             </div>
 
-            {{-- Card Header Profil --}}
             <div class="card border-0 shadow-sm rounded-4 mb-4">
                 <div class="card-body p-4 d-flex align-items-center">
                     <div class="d-flex flex-column align-items-center text-center">
@@ -115,7 +112,6 @@
                 </div>
             </div>
 
-            {{-- Card Informasi Pribadi (Tetap 3 Kolom) --}}
             <div class="card border-0 shadow-sm rounded-4 mb-4">
                 <div class="card-header bg-white border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
                     <h5 class="fw-bold mb-0 text-navy">Informasi Pribadi</h5>
@@ -154,7 +150,6 @@
                 </div>
             </div>
 
-            {{-- Card Alamat (Tetap 3 Kolom) --}}
             <div class="card border-0 shadow-sm rounded-4">
                 <div class="card-header bg-white border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
                     <h5 class="fw-bold mb-0 text-navy">Alamat</h5>
@@ -183,7 +178,7 @@
         </div>
     </div>
 
-    {{-- MODAL EDIT INFO --}}
+    //edit info
     <div class="modal fade" id="editInfoModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow rounded-4">
@@ -227,7 +222,7 @@
         </div>
     </div>
 
-    {{-- MODAL EDIT ALAMAT --}}
+    //edit alamat
     <div class="modal fade" id="editAlamatModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow rounded-4">

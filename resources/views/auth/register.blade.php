@@ -49,7 +49,6 @@
                 @error('password') <span class="error-message">{{ $message }}</span> @enderror
 
                 <label>Asal Kampus</label>
-                {{-- Input kampus disinkronkan dengan database --}}
                 <select name="kampus" class="{{ $errors->has('kampus') ? 'is-invalid' : '' }}" required
                     style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 5px; background: white;">
                     <option value="" disabled {{ old('kampus') ? '' : 'selected' }}>-- Pilih Kampus --</option>

@@ -61,7 +61,6 @@ class InternController extends Controller
             return redirect()->route('intern.status')->with('success', 'Pengajuan berhasil dikirim!');
 
         } catch (\Exception $e) {
-            // Jika ada error database, kembali dengan pesan error
             return redirect()->back()->withInput()->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
         }
     }

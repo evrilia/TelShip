@@ -5,11 +5,9 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/permohonan.css') }}">
     <style>
-        /* Typography & Colors */
         .text-navy { color: #062566 !important; }
         .bg-navy { background-color: #062566 !important; }
 
-        /* Area Konten Utama */
         .main-content-wrapper {
             background-color: #f8f9fa;
             padding: 25px;
@@ -17,7 +15,6 @@
             min-height: calc(100vh - 100px);
         }
 
-        /* Modal Styling */
         .modal-backdrop { z-index: 1040 !important; background-color: rgba(0, 0, 0, 0.5) !important; }
         .modal { z-index: 1050 !important; }
         .modal-content { border: none !important; border-radius: 20px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -41,7 +38,6 @@
             display: block;
         }
 
-        /* Style Tombol Navy Pekat (Sesuai Tombol Simpan Foto) */
         .btn-navy-filled {
             background-color: #062566 !important;
             color: #ffffff !important;
@@ -126,7 +122,7 @@
         </div>
     </div>
 
-    {{-- Modal Detail --}}
+    //detal informasi pengajuan
     <div class="modal fade" id="buktiModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -181,7 +177,7 @@
         </div>
     </div>
 
-    {{-- Modal Status (Logic Fixed) --}}
+   //status
     <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">

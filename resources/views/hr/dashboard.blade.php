@@ -5,14 +5,12 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/dash-HR.css') }}">
     <style>
-        /* Container Utama dengan Background Abu Tipis agar Kotak Putih Terlihat Menonjol */
         .main-content-wrapper {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 15px;
         }
 
-        /* Styling Kartu Statistik agar Sejajar */
         .stats-cards {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -32,7 +30,6 @@
             border: 1px solid #f1f1f1;
         }
 
-        /* Styling Proses Pendaftaran dengan Garis Penghubung */
         .process-container {
             background: #fff;
             border-radius: 20px;
@@ -185,7 +182,6 @@
                 <div class="chart-card custom-card">
                     <h4 class="fw-bold text-navy mb-5">Distribusi Status</h4>
 
-                    {{-- Visual Donut Chart Dinamis menggunakan CSS conic-gradient --}}
                     <div class="donut-chart" style="
                     background: conic-gradient(
                         #fbbc05 0deg {{ $stop1 }}deg, 
@@ -194,7 +190,6 @@
                     );
                 "></div>
 
-                    {{-- Legend dengan Titik Warna --}}
                     <div class="chart-legend d-flex justify-content-center gap-3 mt-4">
                         <div class="small d-flex align-items-center"><span class="dot yellow"></span> Diterima</div>
                         <div class="small d-flex align-items-center"><span class="dot blue"></span> Diproses</div>
@@ -216,18 +211,18 @@
                 datasets: [{
                     data: [{{ $diterima }}, {{ $diproses }}, {{ $ditolak }}],
                     backgroundColor: ['#fbbc05', '#4285f4', '#ea4335'],
-                    hoverOffset: 10, // Memberikan efek menonjol saat di-hover
-                    borderWidth: 0,  // Menghilangkan garis putih antar potongan
-                    borderRadius: 2  // Memberikan sedikit lengkungan pada ujung potongan
+                    hoverOffset: 10,
+                    borderWidth: 0,
+                    borderRadius: 2
                 }]
             },
             options: {
-                cutout: '72%', // Ketebalan lingkaran (semakin besar semakin tipis)
+                cutout: '72%',
                 responsive: true,
-                maintainAspectRatio: false, // Mengikuti ukuran container wrapper
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        display: false // Sembunyikan legend default karena kita pakai legend custom HTML
+                        display: false
                     },
                     tooltip: {
                         enabled: true,

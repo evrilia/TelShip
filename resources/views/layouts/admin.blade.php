@@ -23,7 +23,6 @@
             align-items: stretch;
         }
 
-        /* Sidebar Fixed */
         #sidebar {
             position: fixed;
             top: 0;
@@ -34,7 +33,6 @@
             flex-shrink: 0;
             border-right: 1px solid #eee;
             z-index: 1040;
-            /* Sedikit di bawah modal */
         }
 
         #content {
@@ -43,10 +41,8 @@
             flex-direction: column;
             min-width: 0;
             margin-left: 250px;
-            /* Jarak untuk sidebar fixed */
         }
 
-        /* Topbar Fixed */
         .topbar {
             position: fixed;
             top: 0;
@@ -61,15 +57,12 @@
             padding: 0 1.5rem;
         }
 
-        /* Main Content Area */
         main {
             margin-top: 70px;
-            /* Jarak agar tidak tertutup topbar */
             padding: 20px;
             min-height: calc(100vh - 70px);
         }
 
-        /* Global Helpers */
         .bg-navy {
             background-color: #062566 !important;
         }
@@ -78,7 +71,6 @@
             color: #062566 !important;
         }
 
-        /* Dropdown Clean Up (Khusus Lonceng Notifikasi) */
         .dropdown-toggle::after {
             display: none !important;
         }

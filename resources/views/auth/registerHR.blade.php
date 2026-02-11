@@ -13,19 +13,16 @@
 
 <body>
     <div class="container">
-        {{-- Sisi Kiri: Gambar Background --}}
         <div class="left"
             style="background: url('{{ asset('images/background.log-reg.jpeg') }}') center/cover no-repeat;">
             <img src="{{ asset('images/logo.png') }}" class="logo" alt="Logo TelShip">
             <div class="overlay"></div>
         </div>
 
-        {{-- Sisi Kanan: Form Registrasi --}}
         <div class="right">
             <h1>Admin <span>Tel</span>Ship</h1>
             <p>Daftarkan Akun HR Baru</p>
 
-            {{-- Menampilkan pesan error validasi jika ada email duplikat --}}
             @if ($errors->any())
                 <div style="color: #e60000; font-size: 13px; margin-bottom: 10px;">
                     {{ $errors->first() }}
@@ -33,7 +30,6 @@
             @endif
 
             <form action="{{ route('hr.register.post') }}" method="POST">
-                @csrf {{-- Token keamanan wajib agar tidak refresh/error 419 --}}
 
                 <label>Nama Lengkap</label>
                 <input type="text" name="name" placeholder="Nama Admin" value="{{ old('name') }}" required>
@@ -44,7 +40,6 @@
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Buat password minimal 8 karakter" required>
 
-                {{-- Button dengan style warna navy sesuai desain Anda --}}
                 <button type="submit" class="register-btn"
                     style="background: #062566; color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; cursor: pointer; margin-top: 20px; font-weight: 600;">
                     Daftar Sekarang

@@ -20,31 +20,31 @@
                     </thead>
                     <tbody>
                         @forelse($permohonans as $data)
-                                            <tr class="align-middle">
-                                                <td class="px-4 text-center text-muted">{{ $loop->iteration }}</td>
-                                                <td class="text-muted">{{ $data->created_at->format('d F Y') }}</td>
-                                                <td class="text-muted">{{ $data->durasi }} Bulan</td>
-                                                <td class="text-center">
-                                                    @php
-                                                        $badgeClass = match ($data->status) {
-                                                            'Diterima' => 'success',
-                                                            'Ditolak' => 'danger',
-                                                            'Diproses' => 'secondary',
-                                                            default => 'primary'
-                                                        };
-                                                    @endphp
-                              <span
-                                                        class="badge rounded-pill py-2 px-4 bg-{{ $badgeClass }} bg-opacity-10 text-{{ $badgeClass }} border border-{{ $badgeClass }}">
-                                                        {{ $data->status }}
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-light btn-sm border shadow-sm px-3" style="color: #062566;"
-                                                        onclick="viewDetailIntern({{ $data->id }})">
-                                                        <i class="fas fa-eye me-1"></i> Detail
-                                                    </button>
-                                                </td>
-                                            </tr>
+                            <tr class="align-middle">
+                                <td class="px-4 text-center text-muted">{{ $loop->iteration }}</td>
+                                <td class="text-muted">{{ $data->created_at->format('d F Y') }}</td>
+                                <td class="text-muted">{{ $data->durasi }} Bulan</td>
+                                <td class="text-center">
+                                    @php
+                                        $badgeClass = match ($data->status) {
+                                            'Diterima' => 'success',
+                                            'Ditolak' => 'danger',
+                                            'Diproses' => 'secondary',
+                                            default => 'primary'
+                                        };
+                                    @endphp
+                                    <span
+                                        class="badge rounded-pill py-2 px-4 bg-{{ $badgeClass }} bg-opacity-10 text-{{ $badgeClass }} border border-{{ $badgeClass }}">
+                                        {{ $data->status }}
+                                    </span>
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-light btn-sm border shadow-sm px-3" style="color: #062566;"
+                                        onclick="viewDetailIntern({{ $data->id }})">
+                                        <i class="fas fa-eye me-1"></i> Detail
+                                    </button>
+                                </td>
+                            </tr>
                         @empty
                             <tr>
                                 <td colspan="5" class="text-center py-5 text-muted">
@@ -78,39 +78,38 @@
 @push('scripts')
     <script>
         function viewDetailIntern(id) {
-            // Menggunakan endpoint JSON yang sudah Anda buat di AdminController
             fetch(`/hr/permohonan/${id}/detail`)
                 .then(response => response.json())
                 .then(data => {
                     const html = `
-                        <div class="col-md-6">
-                            <label class="small text-muted fw-bold d-block mb-1">JURUSAN</label>
-                            <p class="fw-bold mb-0 text-navy">${data.jurusan}</p>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="small text-muted fw-bold d-block mb-1">DURASI</label>
-                            <p class="fw-bold mb-0 text-navy">${data.durasi} Bulan</p>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="small text-muted fw-bold d-block mb-1">TANGGAL MULAI</label>
-                            <p class="text-muted mb-0">${data.mulai}</p>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="small text-muted fw-bold d-block mb-1">TANGGAL SELESAI</label>
-                            <p class="text-muted mb-0">${data.selesai}</p>
-                        </div>
-                        <div class="col-12 mt-4">
-                            <label class="small text-muted fw-bold d-block mb-2">BERKAS SAYA</label>
-                            <div class="d-flex gap-2">
-                                <a href="${data.cv}" target="_blank" class="btn btn-sm text-white flex-grow-1 py-2" style="background: #062566; border-radius: 8px;">
-                                    <i class="fas fa-file-pdf me-2"></i> Lihat CV
-                                </a>
-                                <a href="${data.surat}" target="_blank" class="btn btn-sm text-white flex-grow-1 py-2" style="background: #062566; border-radius: 8px;">
-                                    <i class="fas fa-file-pdf me-2"></i> Lihat Surat
-                                </a>
+                            <div class="col-md-6">
+                                <label class="small text-muted fw-bold d-block mb-1">JURUSAN</label>
+                                <p class="fw-bold mb-0 text-navy">${data.jurusan}</p>
                             </div>
-                        </div>
-                    `;
+                            <div class="col-md-6">
+                                <label class="small text-muted fw-bold d-block mb-1">DURASI</label>
+                                <p class="fw-bold mb-0 text-navy">${data.durasi} Bulan</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small text-muted fw-bold d-block mb-1">TANGGAL MULAI</label>
+                                <p class="text-muted mb-0">${data.mulai}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small text-muted fw-bold d-block mb-1">TANGGAL SELESAI</label>
+                                <p class="text-muted mb-0">${data.selesai}</p>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <label class="small text-muted fw-bold d-block mb-2">BERKAS SAYA</label>
+                                <div class="d-flex gap-2">
+                                    <a href="${data.cv}" target="_blank" class="btn btn-sm text-white flex-grow-1 py-2" style="background: #062566; border-radius: 8px;">
+                                        <i class="fas fa-file-pdf me-2"></i> Lihat CV
+                                    </a>
+                                    <a href="${data.surat}" target="_blank" class="btn btn-sm text-white flex-grow-1 py-2" style="background: #062566; border-radius: 8px;">
+                                        <i class="fas fa-file-pdf me-2"></i> Lihat Surat
+                                    </a>
+                                </div>
+                            </div>
+                        `;
                     document.getElementById('detailContent').innerHTML = html;
                     new bootstrap.Modal(document.getElementById('detailModalIntern')).show();
                 })

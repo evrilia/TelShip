@@ -6,7 +6,6 @@
     <div class="container-fluid p-4">
         <h2 class="fw-bold mb-4" style="color: #062566;">Pengajuan Magang</h2>
 
-        {{-- Alert untuk menampilkan error validasi --}}
         @if ($errors->any())
             <div class="alert alert-danger border-0 shadow-sm rounded-4">
                 <ul class="mb-0">
@@ -80,7 +79,6 @@
                         </div>
                     </div>
 
-                    {{-- Durasi Magang - Tampilan Tiga Kotak --}}
                     <div class="row mb-3 align-items-center">
                         <label class="col-md-3 text-muted">Durasi Magang</label>
                         <div class="col-md-9">
@@ -128,7 +126,6 @@
         </div>
     </div>
 
-    {{-- Modal Konfirmasi --}}
     <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg rounded-4 p-4 text-center">

@@ -8,18 +8,18 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermohonanController;
 use App\Http\Controllers\NotifikasiController;
 
-// Halaman Utama / Login
+//Halaman Utama / Login
 Route::get('/', function () {
     return view('auth.login');
 })->name('login');
 
-// Registrasi Calon Intern
+//Registrasi Intern
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 
-// Registrasi HR/Admin Baru
+// Registrasi HR
 Route::get('/hr/register', function () {
     return view('auth.registerHR');
 })->name('hr.register');
@@ -32,7 +32,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/notifikasi/{id}/read', [NotifikasiController::class, 'markAsRead'])->name('notif.read');
-    // --- GRUP RUTE ADMIN / HR ---
+    //HR
     Route::prefix('hr')->name('hr.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::get('/permohonan', [AdminController::class, 'permohonan'])->name('permohonan');
@@ -43,7 +43,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/admin-profile/update', [ProfileController::class, 'update'])->name('profile.update');
     });
 
-    // --- GRUP RUTE INTERN / USER ---
+    //intern
     Route::prefix('intern')->name('intern.')->group(function () {
         Route::get('/dashboard', [InternController::class, 'dashboard'])->name('dashboard');
         Route::get('/status', [InternController::class, 'status'])->name('status');

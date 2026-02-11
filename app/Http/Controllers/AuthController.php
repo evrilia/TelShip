@@ -70,7 +70,6 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            // Redirect menggunakan rute GET untuk menghindari MethodNotAllowed
             if (Auth::user()->role === 'admin') {
                 return redirect()->route('hr.dashboard');
             }

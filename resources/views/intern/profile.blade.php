@@ -105,7 +105,6 @@
             </div>
         </div>
 
-        {{-- Informasi Pribadi --}}
         <div class="card card-profile">
             <div class="card-header bg-white border-0 pt-4 px-4 d-flex justify-content-between">
                 <h5 class="fw-bold text-navy">Informasi Pribadi</h5>
@@ -147,7 +146,6 @@
             </div>
         </div>
 
-        {{-- Alamat --}}
         <div class="card card-profile">
             <div class="card-header bg-white border-0 pt-4 px-4 d-flex justify-content-between">
                 <h5 class="fw-bold text-navy">Alamat</h5>
@@ -173,7 +171,7 @@
         </div>
     </div>
 
-    {{-- Modal Edit Info --}}
+    /edit info
     <div class="modal fade" id="editInfoModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0">
@@ -232,7 +230,7 @@
         </div>
     </div>
 
-    {{-- Modal Edit Alamat --}}
+    //edit alamat
     <div class="modal fade" id="editAlamatModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0">
