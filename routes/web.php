@@ -30,26 +30,25 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::middleware(['auth'])->group(function () {
-
     Route::get('/notifikasi/{id}/read', [NotifikasiController::class, 'markAsRead'])->name('notif.read');
-    //HR
+
+    //hr
     Route::prefix('hr')->name('hr.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::get('/permohonan', [AdminController::class, 'permohonan'])->name('permohonan');
-        Route::get('/permohonan-list', [AdminController::class, 'permohonan'])->name('permohonan.index');
         Route::patch('/permohonan/{id}/status', [AdminController::class, 'updateStatus'])->name('permohonan.status');
         Route::get('/permohonan/{id}/detail', [AdminController::class, 'getDetail'])->name('permohonan.detail');
-        Route::get('/admin-profile', [ProfileController::class, 'profile'])->name('profile');
-        Route::post('/admin-profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+        Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     });
 
-    //intern
+    //Intern
     Route::prefix('intern')->name('intern.')->group(function () {
         Route::get('/dashboard', [InternController::class, 'dashboard'])->name('dashboard');
         Route::get('/status', [InternController::class, 'status'])->name('status');
         Route::get('/pengajuan', [InternController::class, 'pengajuan'])->name('pengajuan');
-        Route::post('/pengajuan', [InternController::class, 'storePengajuan'])->name('pengajuan.store'); // Pastikan .store ada
-        Route::get('/user-profile', [ProfileController::class, 'profile'])->name('profile');
-        Route::post('/user-profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        Route::post('/pengajuan/store', [InternController::class, 'storePengajuan'])->name('pengajuan.store');
+        Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+        Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     });
 });

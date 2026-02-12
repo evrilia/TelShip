@@ -30,7 +30,7 @@
             @endif
 
             <form action="{{ route('hr.register.post') }}" method="POST">
-
+                @csrf
                 <label>Nama Lengkap</label>
                 <input type="text" name="name" placeholder="Nama Admin" value="{{ old('name') }}" required>
 
