@@ -171,7 +171,6 @@
         </div>
     </div>
 
-    /edit info
     <div class="modal fade" id="editInfoModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0">
@@ -230,7 +229,6 @@
         </div>
     </div>
 
-    //edit alamat
     <div class="modal fade" id="editAlamatModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0">

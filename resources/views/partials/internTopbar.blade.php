@@ -12,8 +12,9 @@
 <nav class="navbar navbar-expand bg-white border-bottom sticky-top"
     style="height: 70px; z-index: 1020; padding: 0 25px;">
     <div class="container-fluid d-flex justify-content-between align-items-center h-100">
-        <div class="topbar-left">
-            <span class="text-muted fw-bold small">Telkom Youth Internship Purwokerto</span>
+        <div class="topbar-left d-flex align-items-center">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo Telkom Youth Internship"
+                style="height: 40px; width: auto; object-fit: contain;">
         </div>
 
         <div class="topbar-right d-flex align-items-center gap-3">
@@ -40,7 +41,7 @@
                                     href="{{ route('notif.read', $notif->id) }}">
 
                                     <div class="rounded-circle me-3 d-flex align-items-center justify-content-center 
-                                            {{ str_contains(strtolower($notif->message), 'terima') ? 'bg-success' : 'bg-danger' }} bg-opacity-10"
+                                                    {{ str_contains(strtolower($notif->message), 'terima') ? 'bg-success' : 'bg-danger' }} bg-opacity-10"
                                         style="width: 35px; height: 35px; flex-shrink: 0;">
                                         <i
                                             class="fas {{ str_contains(strtolower($notif->message), 'terima') ? 'fa-check text-success' : 'fa-times text-danger' }} small"></i>

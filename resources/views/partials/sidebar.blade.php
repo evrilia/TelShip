@@ -1,12 +1,10 @@
 <aside class="sidebar-hr d-flex flex-column"
     style="width: 260px; height: 100vh; position: fixed; left: 0; top: 0; z-index: 1030; background: #fff; border-right: 1px solid #dee2e6;">
-    {{-- Header Logo --}}
     <div class="sidebar-header d-flex align-items-center justify-content-center" style="height: 120px; padding: 20px;">
-        <img src="{{ asset('images/logo.png') }}" alt="Telkom Indonesia"
+        <img src="{{ asset('images/logoo.png') }}" alt="Telkom Indonesia"
             style="height: 60px; width: auto; object-fit: contain;">
     </div>
 
-    {{-- Menu Navigasi --}}
     <nav class="sidebar-menu flex-grow-1 mt-2">
         <style>
             .hr-link {
@@ -35,7 +33,6 @@
             }
         </style>
 
-        {{-- Pastikan Route menggunakan prefix 'hr.' --}}
         <a href="{{ route('hr.dashboard') }}" class="hr-link {{ request()->routeIs('hr.dashboard') ? 'active' : '' }}">
             <i class="fas fa-home"></i> <span>Dashboard</span>
         </a>

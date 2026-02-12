@@ -8,9 +8,9 @@
 @endphp
 
 <nav class="topbar border-bottom">
-    <div class="topbar-left">
-        <button class="menu-btn d-lg-none" id="sidebarToggle">☰</button>
-        <span class="fw-bold text-muted small">Telkom Youth Internship Purwokerto</span>
+    <div class="topbar-left d-flex align-items-center">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo Telkom Youth Internship"
+            style="height: 40px; width: auto; object-fit: contain;">
     </div>
 
     <div class="topbar-right d-flex align-items-center gap-3">

@@ -1,7 +1,7 @@
 <aside class="sidebar-stay"
     style="width: 260px; height: 100vh; position: fixed; left: 0; top: 0; z-index: 1030; background: #fff; border-right: 1px solid #dee2e6; display: flex; flex-direction: column;">
     <div class="sidebar-header d-flex align-items-center justify-content-center" style="height: 80px;">
-        <img src="{{ asset('images/logo.png') }}" alt="Logo" style="height: 50px; width: auto;">
+        <img src="{{ asset('images/logoo.png') }}" alt="Logo" style="height: 50px; width: auto;">
     </div>
 
     <nav class="sidebar-menu flex-grow-1 mt-2">
